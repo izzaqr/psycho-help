@@ -3,11 +3,7 @@ body {
   color: #fff;
   background: linear-gradient(135deg, #325343, #23432f);
   position: relative;
-  margin: 0;
-  min-height: 100vh;
-  /* Минимальная высота страницы */
   overflow-x: hidden;
-  /* Убираем горизонтальный скролл */
 }
 
 body::before {
@@ -36,6 +32,24 @@ body::before {
   padding-top: 165px;
   padding-bottom: 270px;
   z-index: 1;
+  background: linear-gradient(135deg, #325343, #23432f);
+  overflow-x: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)' fill='%23fff'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.12;
+  /* Интенсивность зернистости */
 }
 
 .hero {
@@ -98,22 +112,7 @@ body::before {
   background: none;
   font-weight: 500;
   font-size: 16px;
-}
-
-.hero__input-name input {
   color: rgba(255, 255, 255, 0.5);
-}
-
-.hero__input-tel {
-  background: #fff;
-}
-
-.hero__input-tel input {
-  color: #325343;
-}
-
-.hero__input-tel input::placeholder {
-  color: #325343;
 }
 
 .hero__btn {
